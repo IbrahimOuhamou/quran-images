@@ -1,0 +1,24 @@
+# بسم الله الرحمن الرحيم
+# la ilaha illa Allah Mohammed Rassoul Allah
+
+import requests
+
+print("بسم الله الرحمن الرحيم")
+print("this script is to download all the images from the website")
+
+pages_count = 604
+
+base_url = 'bismi_allah' # 'https://easyquran.com/wp-content/uploads/2022/10/'
+
+for i in range(1, pages_count + 1):
+    download_url = base_uel + str(i) + '.jpg'
+    image_output_path = str(i) + ".jpg"
+
+    print("alhamdo li Allah will download image from '" + download_url + "' to '" + image_output_path + "'")
+
+    img_data = requests.get(download_url).content
+    f = open(image_output_path, "wb")
+    f.write(img_data)
+    f.close()
+
+print('alhamdo li Allah done downloading images')
